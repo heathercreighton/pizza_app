@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="jumbotron" id="coupon">
+  <h1>Our Current Deals</h1>
+  <p class="coupon-text">Must have printed coupon to get deal. Please present coupon when ordering.</p>
+
+
+  <div class="container" >
+
+    <div class="row">
+      
+    <% @coupons.each do |coupon| %>
+
+    <div class="col-md-4">
+      <div class="well well-coupon">
+        <h4>Valid <%= coupon.from_date.strftime('%B %e %Y') %> to <%= coupon.to_date.strftime('%B %e %Y') %></h4>
+        
+        <h3><%= coupon.deal %></h3>
+        <p><%= coupon.description %></p>
+        <h4><%= coupon.exclusions %></h4>
+
+       <% if user_signed_in? %> 
+        <p><%= link_to 'Show', coupon, class: 'btn btn-primary' %></p>
+        <p><%= link_to 'Edit', edit_coupon_path(coupon), class: 'btn btn-warning' %></p>
+        <p><%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></p>
+       <% end %> 
+      </div>
+     </div>
+    <% end %>
+   
+  </div>
+</div>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Coupon', new_coupon_path, class: "btn btn-primary" %>
+<% end %>
+
+</div>

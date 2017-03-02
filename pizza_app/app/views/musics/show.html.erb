@@ -1,0 +1,19 @@
+<div class="jumbotron">
+	<p>
+	  <strong>Date:</strong>
+	  <%= @music.date %>
+	</p>
+
+	<p>
+	  <strong>Performer:</strong>
+	  <%= @music.performer %>
+	</p>
+
+	<p>
+	  <strong>Comments:</strong>
+	  <%= @music.comments %>
+	</p>
+
+	<%= link_to 'Edit', edit_music_path(@music) %> |
+	<%= link_to 'Back', musics_path %>
+</div>

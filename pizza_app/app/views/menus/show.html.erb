@@ -1,0 +1,26 @@
+<div class="jumbotron">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item type:</strong>
+  <%= @menu.item_type %>
+</p>
+
+<p>
+  <strong>Item name:</strong>
+  <%= @menu.item_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @menu.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @menu.price %>
+</p>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>
+</div>
